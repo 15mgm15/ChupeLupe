@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ChupeLupe.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ChupeLupe
@@ -11,7 +12,7 @@ namespace ChupeLupe
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new PromotionsList());
         }
 
         protected override void OnStart()
