@@ -28,5 +28,5 @@ then
 echo "------------ A test Failed!!! --------------" 
 exit 1
 else 
-echo "------------ All tests passed :D --------------"" 
+echo "------------ All tests passed :D --------------"
 fi
