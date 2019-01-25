@@ -75,7 +75,8 @@ namespace UnitTest.ViewModels
             // Assert
             ServerSideDataMock.Verify(m => m.GetPromotions(), Times.Once());
             Assert.IsNull(vm.PromotionsList);
-            Assert.IsFalse(vm.IsBusy);
+            //Assert.IsFalse(vm.IsBusy);
+            Assert.IsFalse(true);
 
         }
     }
