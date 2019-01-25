@@ -2,8 +2,10 @@
 #
 # For Xamarin, run all NUnit test projects that have "Test" in the name.
 # The script will build, run and display the results in the build logs.
-APP_TEST_PROJECT=$APPCENTER_SOURCE_DIRECTORY/UnitTest/UnitTest.csproj
-APP_TEST_DLL=$APPCENTER_SOURCE_DIRECTORY/UnitTest
+APP_TEST_PROJECT=$APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest/UnitTest.csproj
+APP_TEST_DLL=$APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest
+
+echo "------------ Starting Unit Test Process ------------"
 
 echo "Found NUnit test projects:"
 find APP_TEST_PROJECT -exec echo {} \;
