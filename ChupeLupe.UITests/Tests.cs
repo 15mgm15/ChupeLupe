@@ -28,10 +28,9 @@ namespace ChupeLupe.UITests
         [Test]
         public void WelcomeTextIsDisplayed()
         {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            app.Screenshot("Welcome screen.");
-
+            AppResult[] results = app.WaitForElement(c => c.Marked("6 BudLight por solo $60."));
             Assert.IsTrue(results.Any());
+            app.Flash("6 BudLight por solo $60.");
         }
     }
 }

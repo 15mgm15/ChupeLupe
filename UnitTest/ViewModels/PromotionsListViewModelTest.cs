@@ -1,5 +1,4 @@
 ﻿using System;
-using ChupeLupe.UnitTest.Helpers;
 using NUnit.Framework;
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
@@ -9,8 +8,9 @@ using ChupeLupe.ViewModels;
 using ChupeLupe.Models;
 using System.Collections.Generic;
 using AutoFixture;
+using UnitTest.Helpers;
 
-namespace ChupeLupe.UnitTest.ViewModels
+namespace UnitTest.ViewModels
 {
     [TestFixture]
     public class PromotionsListViewModelTest
@@ -38,8 +38,8 @@ namespace ChupeLupe.UnitTest.ViewModels
         [Test]
         public void GetPromotionsCommandIsSuccessful()
         {
+            // Arrange
             var vm = new PromotionsListViewModel(NavigationMock.Object, DependencyService);
-
             List<Promotion> list = new List<Promotion>
             {
                 new Promotion
@@ -50,11 +50,30 @@ namespace ChupeLupe.UnitTest.ViewModels
             };
             ServerSideDataMock.Setup(m => m.GetPromotions()).ReturnsAsync(list);
 
+            // Act
             vm.GetPromotionsCommand.Execute(null);
 
+            // Assert
             ServerSideDataMock.Verify(m => m.GetPromotions(), Times.Once());
             Assert.IsNotNull(vm.PromotionsList);
             Assert.AreEqual(1, vm.PromotionsList.Count);
+
+        }
+
+        [Test]
+        public void GetPromotionsCommandIsNotSuccessful()
+        {
+            // Arrange
+            var vm = new PromotionsListViewModel(NavigationMock.Object, DependencyService);
+            List<Promotion> list = new List<Promotion>();
+            ServerSideDataMock.Setup(m => m.GetPromotions()).ReturnsAsync(list);
+
+            // Act
+            vm.GetPromotionsCommand.Execute(null);
+
+            // Assert
+            ServerSideDataMock.Verify(m => m.GetPromotions(), Times.Once());
+            Assert.IsNull(vm.PromotionsList);
 
         }
     }

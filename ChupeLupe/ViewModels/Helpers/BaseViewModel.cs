@@ -18,7 +18,11 @@ namespace ChupeLupe.ViewModels.Helpers
         {
             DependencyServiceWrapper = dependencyService;
             Navigation = navigation;
-            WebApi = new WebServicesApi();
+
+            //TODO: Show off the error
+            //WebApi = new WebServicesApi();
+
+            WebApi = DependencyServiceWrapper.Get<IWebServicesApi>();
         }
 
         protected bool SetValue<T>(ref T backingStore, T value,

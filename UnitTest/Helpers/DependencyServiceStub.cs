@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using ChupeLupe.Helpers;
 
-namespace ChupeLupe.UnitTest.Helpers
+namespace UnitTest.Helpers
 {
     public class DependencyServiceStub : IDependencyService
     {
