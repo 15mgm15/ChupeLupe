@@ -2,18 +2,20 @@
 #
 # For Xamarin, run all NUnit test projects that have "Test" in the name.
 # The script will build, run and display the results in the build logs.
+APP_TEST_PROJECT=$APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest.csproj
+APP_TEST_DLL=$APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest/bin/UnitTest.dll
 
 echo "Found NUnit test projects:"
-find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest.csproj -exec echo {} \;
-echo
+find APP_TEST_PROJECT -exec echo {} \;
+echo 
 echo "Building NUnit test projects:"
-find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest.csproj -exec msbuild {} \;
+find APP_TEST_PROJECT -exec msbuild {} \;
 echo
 echo "Compiled projects to run NUnit tests:"
-find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest/bin/UnitTest.dll -exec echo {} \;
+find APP_TEST_DLL -exec echo {} \;
 echo
 echo "Running NUnit tests:"
-find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest/bin/UnitTest.dll -exec nunit3-console {} +
+find APP_TEST_DLL -exec nunit3-console {} +
 echo
 echo "NUnit tests result:"
 pathOfTestResults=$(find $APPCENTER_SOURCE_DIRECTORY -name 'TestResult.xml')
