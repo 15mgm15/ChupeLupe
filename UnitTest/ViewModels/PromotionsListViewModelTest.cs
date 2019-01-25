@@ -57,6 +57,7 @@ namespace UnitTest.ViewModels
             ServerSideDataMock.Verify(m => m.GetPromotions(), Times.Once());
             Assert.IsNotNull(vm.PromotionsList);
             Assert.AreEqual(1, vm.PromotionsList.Count);
+            Assert.IsFalse(vm.IsBusy);
 
         }
 
@@ -74,6 +75,7 @@ namespace UnitTest.ViewModels
             // Assert
             ServerSideDataMock.Verify(m => m.GetPromotions(), Times.Once());
             Assert.IsNull(vm.PromotionsList);
+            Assert.IsFalse(vm.IsBusy);
 
         }
     }
