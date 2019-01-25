@@ -4,16 +4,16 @@
 # The script will build, run and display the results in the build logs.
 
 echo "Found NUnit test projects:"
-find $APPCENTER_SOURCE_DIRECTORY -regex 'ChupeLupe\UnitTest.csproj' -exec echo {} \;
+find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest.csproj -exec echo {} \;
 echo
 echo "Building NUnit test projects:"
-find $APPCENTER_SOURCE_DIRECTORY -regex 'ChupeLupe\UnitTest.csproj' -exec msbuild {} \;
+find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest.csproj -exec msbuild {} \;
 echo
 echo "Compiled projects to run NUnit tests:"
-find $APPCENTER_SOURCE_DIRECTORY -regex 'ChupeLupe\UnitTest\bin\UnitTest.dll' -exec echo {} \;
+find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest/bin/UnitTest.dll -exec echo {} \;
 echo
 echo "Running NUnit tests:"
-find $APPCENTER_SOURCE_DIRECTORY -regex 'ChupeLupe\UnitTest\bin\UnitTest.dll' -exec nunit3-console {} +
+find $APPCENTER_SOURCE_DIRECTORY/ChupeLupe/UnitTest/bin/UnitTest.dll -exec nunit3-console {} +
 echo
 echo "NUnit tests result:"
 pathOfTestResults=$(find $APPCENTER_SOURCE_DIRECTORY -name 'TestResult.xml')
