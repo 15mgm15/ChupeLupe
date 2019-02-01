@@ -6,7 +6,8 @@ namespace UnitTest.Helpers
 {
     public class DependencyServiceStub : IDependencyService
     {
-        readonly Dictionary<Type, object> registeredServices = new Dictionary<Type, object>();
+        readonly Dictionary<Type, object> registeredServices = 
+        new Dictionary<Type, object>();
 
         public void Register<T>(object impl)
         {

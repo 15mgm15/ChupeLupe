@@ -30,9 +30,7 @@ namespace ChupeLupe.Droid
             FirebasePushNotificationManager.ProcessIntent(this, Intent);
 
             CrossFirebasePushNotification.Current.Subscribe(new string[] { "all" });
-            var token = CrossFirebasePushNotification.Current.Token;
-            Console.WriteLine(token);
-            //TODO: Store the tokens in the remote database
+
         }
 
         protected override void OnNewIntent(Intent intent)

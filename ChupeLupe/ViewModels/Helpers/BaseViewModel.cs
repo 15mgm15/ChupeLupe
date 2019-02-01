@@ -19,9 +19,7 @@ namespace ChupeLupe.ViewModels.Helpers
             DependencyServiceWrapper = dependencyService;
             Navigation = navigation;
 
-            //TODO: Show off the error
             //WebApi = new WebServicesApi();
-
             WebApi = DependencyServiceWrapper.Get<IWebServicesApi>();
         }
 

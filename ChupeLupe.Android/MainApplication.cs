@@ -3,11 +3,12 @@ using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Plugin.FirebasePushNotification;
+using Xamarin.Forms;
 
 namespace ChupeLupe.Droid
 {
     [Application]
-    public class MainApplication : Application
+    public class MainApplication : Android.App.Application
     {
         public MainApplication(IntPtr handle, JniHandleOwnership transer) : base(handle, transer)
         {

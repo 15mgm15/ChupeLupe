@@ -74,6 +74,7 @@ namespace ChupeLupe.ViewModels
                 }
 
                 IsBusy = false;
+                App.IsInit = true;
             }
             catch (Exception ex)
             {

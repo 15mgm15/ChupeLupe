@@ -8,6 +8,8 @@ namespace ChupeLupe
 {
     public partial class App : Application
     {
+        public static bool IsInit { get; set; }
+
         public App()
         {
             InitializeComponent();
