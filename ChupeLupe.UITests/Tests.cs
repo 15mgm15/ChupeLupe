@@ -7,7 +7,7 @@ using Xamarin.UITest.Queries;
 
 namespace ChupeLupe.UITests
 {
-    //[TestFixture(Platform.Android)]
+    [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
     public class Tests
     {
